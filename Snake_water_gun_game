@@ -1,0 +1,41 @@
+import random
+i=0
+count1=0
+count2=0
+
+while i<10:
+    mylst=["snake","water","gun"]
+    pc_choice=str(random.choice(mylst))
+
+    user_choice=input("press s,w,g")
+    if user_choice== pc_choice[0]:
+        print("tie")
+    if pc_choice=="snake" and user_choice=="w":
+        print("you loss")
+        count1+=1
+    if pc_choice == "snake" and user_choice == "g":
+        print("you won")
+        count1+=1
+    if pc_choice == "water" and user_choice == "s":
+        print("you win")
+        count2+=1
+    if pc_choice == "water" and user_choice == "g":
+        print("you loss")
+        count2+=1
+    if pc_choice == "gun" and user_choice == "s":
+        print("you loss")
+        count2+=1
+    if pc_choice == "gun" and user_choice == "w":
+        print("you win")
+        count1+=1
+    i+=1
+
+if count1>count2:
+    print("congo! you are the wiiner")
+if count1==count2:
+    print("match tie")
+if count1<count2:
+    print("sorry ! Better luck next time")
+
+
+
